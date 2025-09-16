@@ -1,0 +1,16 @@
+{
+  "store": [
+    {
+      "description": "list todos"
+    },
+    {
+      "description": "pull rtd config from .config"
+    },
+    {
+      "description": "edit todos"
+    },
+    {
+      "description": "mark todos as completed"
+    }
+  ]
+}
