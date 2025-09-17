@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
-use std::io;
 
 mod commands;
+mod config;
 mod storage;
 
 use rtd::{Store, Todo};
@@ -29,16 +29,7 @@ fn main() {
 
     match cli.command {
         Commands::Add => commands::add::execute(),
-
-        Commands::Push => {
-            println!("Enter todo description (STORED PUBLICLY):");
-            let mut input = String::new();
-            io::stdin().read_line(&mut input).unwrap();
-            let description = input.trim().to_string();
-
-            storage::add_todo(description, "store.json")
-        }
-
+        Commands::Push => commands::add::execute_push(),
         Commands::Migrate => commands::migrate::execute(),
     }
 }

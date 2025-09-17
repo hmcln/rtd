@@ -1,3 +1,4 @@
+use crate::config;
 use crate::storage;
 use rtd::{Store, Todo};
 use serde::Deserialize;
@@ -28,8 +29,8 @@ pub fn get_or_create_todo(id: Option<String>, description: String) -> Todo {
 }
 
 pub fn execute() {
-    let path = "store.json";
-    let store_file_contents = storage::get_store_file(path).unwrap();
+    let path = config::get_store_path();
+    let store_file_contents = storage::get_store_file(&path).unwrap();
     let parsed_contents = serde_json::from_str::<LegacyStore>(&store_file_contents).unwrap();
 
     let mut new_store: Store = Store { store: Vec::new() };
@@ -40,5 +41,5 @@ pub fn execute() {
             .push(get_or_create_todo(todo.id, todo.description))
     }
 
-    storage::save_store(path, &new_store)
+    storage::save_store(&path, &new_store)
 }
