@@ -20,6 +20,8 @@ enum Commands {
     Add,
     /// Push a new todo item
     Push,
+    /// Migrate store to current data structure
+    Migrate,
 }
 
 fn main() {
@@ -36,5 +38,7 @@ fn main() {
 
             storage::add_todo(description, "store.json")
         }
+
+        Commands::Migrate => commands::migrate::execute(),
     }
 }

@@ -1,15 +1,19 @@
 {
   "store": [
     {
+      "id": "a2537ff0-a655-4e14-a593-181c6878bf65",
       "description": "list todos"
     },
     {
+      "id": "a2c2a4f0-11b2-4516-a995-f68a48bd288e",
       "description": "pull rtd config from .config"
     },
     {
+      "id": "a7366aef-75a3-41c0-b7f9-bb38455985af",
       "description": "edit todos"
     },
     {
+      "id": "d9ba6f74-3258-477d-b6cd-46c2aee7f669",
       "description": "mark todos as completed"
     }
   ]
